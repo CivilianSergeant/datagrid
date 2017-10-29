@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Data Grid</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+        <script src="jquery.datagrid.js"></script>
+        <style>
+            .grid{
+                position:relative;
+                height:100px;
+
+            }
+
+            .grid-header{
+                position:relative;
+                height:10px;
+                
+            }
+            .row-container{
+                position: relative;
+                
+            }
+            .gh-col{
+                border-left: 1px solid #0e6994;
+                border-top: 1px solid #0d6994;
+                float: left;
+                
+                padding: 3px 8px;
+                border-bottom: 1px solid #0d6994;
+                text-align: center;
+                padding-right: 10px;
+                box-shadow: 0px 1px 3px #ccc;
+                background: #5d8da5;
+                color: #fff;
+                font-size: 14px;
+            }
+            
+            .grid-row:first-child .gr-col{
+                border-top:none;
+            }
+            .grid-row:last-child .gr-col{
+                border-bottom:1px solid #0e6990;
+            }
+            .gh-col:last-child{
+                border-right:1px solid #0d6994;
+            }
+            .gr-col{
+                border-left: 1px solid #0e6994;
+                border-top: 1px solid #0d6994;
+                float: left;
+                
+                padding: 3px 8px;
+                text-align: center;
+                padding-right: 10px;
+                box-shadow: 0px 1px 3px #ccc;
+                overflow:hidden;
+                color: #333;
+                font-size: 14px;
+            }
+            .gr-col:last-child{
+                border-right:1px solid #0e6990;
+            }
+        </style>
+    </head>
+
+    <body style="background:gray;margin-top:10px;font-size:12px;">
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Data Grid </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="grid">
+                            <!-- <div class="grid-header">
+                                <div class="gh-col">SL</div>
+                                <div class="gh-col">A</div>
+                                <div class="gh-col">B</div>
+                                <div class="gh-col">C</div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <script>
+            $(".grid").dataGrid({
+                colWidth:'140px',
+                headers : [
+                    {caption:'SL'},
+                    {
+                        caption: 'Name',
+                        sortable:true
+                    },
+                    {caption:'E-mail'},
+                    {caption:'Phone'}
+                ],
+                data:[
+                    [1,'Saiful','saiful@email.com','28333383'],
+                    [1,'Minhaz','minhaz@email.com','54333383'],
+                    [1,'arif','arif@email.com','232333383'],
+                    [1,'faysal','faysal@email.com','98333383']
+                ]
+            });
+        </script>   
+    </body>
+</html>
